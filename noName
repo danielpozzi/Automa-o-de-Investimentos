@@ -4,45 +4,61 @@ O projeto foi iniciado fazendo a comunicação entre o computador e o google she
 
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||| CONFIGURAÇÃO DE CONTA GOOGLE DEVELOPER CONSOLE:
 
-O primeiro passo para fazer a comunicação é entrando em Google Developer Console e criando a aba do projeto. É bem parecido com o Github.
+**O primeiro passo para fazer a comunicação é entrando em Google Developer Console e criando a aba do projeto. É bem parecido com o Github.
 
-https://console.cloud.google.com/cloud-resource-manager
+**Site do Google Developer Console: https://console.cloud.google.com/cloud-resource-manager
 
-Após a criação da pasta de projeto no Google Cloud Console,  deve buscar na barra de pesquisa por "google drive api" e instalar a API.
-O segundo passo é configurar sua API na "Tela de permissão OAuth'. Nesse primeiro momento, a sua planilha estará em processo de teste e será necessário cadastrar email das pessoas que terão acesso a aplicação nesta etapa para que o VSCode consiga acessar a planilha.
-Após a configuração da API no Google Develope Console, devemos procurar por "google sheets api python" no google e abrir a página "Python quickstart | Google Sheets",
-Dentro do site de quickstart temos que procurar o pip de instalação das bibliotecas do google e executar dentro do nosso software de códigos, no meu caso, estou utilizando VSCode.
-pip de instalação: pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
-O código do pit deve ser inserido dentro da aba "TERMINAL" no VS Code e aguardar finalizar a instalação.
-Para dar andamento a comunicação do programa com o google sheets, é necessário copiar o código que está dentro do quick start. Esse código está dentro da pasta "CodeIntegrarGoogleSheets" aqui no Github.
-O código fonte de comunicação do quickstart do Google deve ser modificado de acordo com as nossas necessidades. Verificar pontos abaixo que devem ser levados em consideração:
+**Após a criação da pasta de projeto no Google Cloud Console,  deve buscar na barra de pesquisa por "google drive api" e instalar a API.
+**O segundo passo é configurar sua API na "Tela de permissão OAuth'. Nesse primeiro momento, a sua planilha estará em processo de teste e será necessário cadastrar email das pessoas que terão acesso a aplicação nesta etapa para que o VSCode consiga acessar a planilha.
+**Na terceira etapa, devemos criar uma nova credencial na aba "Credenciais" para ID's do Client OAuth.
+**Após a criação de uma nova credencial, será necessário fazer o download do Cliente OAuth e jogar dentro do VSCode. Vale ressaltar que o nome que deve ser inserido nesse Cliente OAuth deve ser igual ao nome que deverá ser substituído no momento da CONFIGURAÇÃO DE CÓDIGO DA API GOOGLE NO VSCODE PARA PERMISSÃO DE ACESSO À PLANILHA.
+**Após a configuração da API no Google Develope Console, devemos procurar por "google sheets api python" no google e abrir a página "Python quickstart | Google Sheets",
+**Dentro do site de quickstart temos que procurar o pip de instalação das bibliotecas do google e executar dentro do nosso software de códigos, no meu caso, estou utilizando VSCode.
+**Segue pip de instalação: pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
+**O código do pit deve ser inserido dentro da aba "TERMINAL" no VS Code e aguardar finalizar a instalação.
+**Para dar andamento a comunicação do programa com o google sheets, é necessário copiar o código que está dentro do quick start. Esse código está dentro da pasta "CodeIntegrarGoogleSheets" aqui no Github.
+**O código fonte de comunicação do quickstart do Google deve ser modificado de acordo com as nossas necessidades. Verificar pontos abaixo que devem ser levados em consideração:
+
+---------------------------------------------------> FINALIZADA A ETAPA DE CONFIGURAÇÃO DE CONTA GOOGLE DEVELOPER CONSOLE.
 
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||| CONFIGURAÇÃO DE CÓDIGO DA API GOOGLE NO VSCODE PARA PERMISSÃO DE ACESSO À PLANILHA:
+
+**A configuração do código se inicia pelo SCOPES: 
 
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets.readonly"] #ESSA PARTE DO CÓDIGO PODE SER MODIFICADA. NOTAR QUE O FILMA DA LINHA "readonly" PODE SER RETIRADA PARA QUE O PROGRAMA POSSAR TER MAIS LIBERDADE NA MODIFICAÇÃO DA PLANILHA
 
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets"] #CASO SEJA NECESSÁRIO EXCLUIR, ELE DEVERÁ FICAR DESSA MANEIRA.
+
+**Devemos alterar o ID de localização na planilha que está presente dentro do url da planilha no site GoogleSheets.
 
 SAMPLE_SPREADSHEET_ID = "1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms" #NOTAR QUE ESSA LINHA REPRESENTA A LOCALIZAÇÃO DA SUA PLANILHA NO SISTEMA DO GOOGLE, NO MEU CASO, O LINK DA PLANILHA GOOGLE É:
 https://docs.google.com/spreadsheets/d/1TX2Qv_VxSmil6Bs7FBCDiFhu4ArUbkFzim7qV3brb8w/edit#gid=0 E O ID DESTA PLANILHA É REPRESETADO PELA COMBINAÇÃO ALFANUMÉRICA DEPOS DO /d/ ATÉ A PRÓXIMA /. O CÓDIGO QUE DEVE SER INSERIDO NO CÓDIGO É "1TX2Qv_VxSmil6Bs7FBCDiFhu4ArUbkFzim7qV3brb8w".
 
 SAMPLE_SPREADSHEET_ID = "1TX2Qv_VxSmil6Bs7FBCDiFhu4ArUbkFzim7qV3brb8w" #A LINHA DO CÓDIGO DEVERÁ FICAR DESSA MANEIRA.
 
+**Nesta parte do código, iremos fazer a alteração de quais células que estamos permitindo fazer a modificação.
 SAMPLE_RANGE_NAME = "Class Data!A2:E" #ESSA LINHA DO CÓDIGO REPRESENTA QUAL O NOME DA SHEET QUE O CÓDIGO IRÁ RODAR E AS CÉLULAS QUE OS DADOS ESTÃO INSERIDOS. NO MEU CASO, OS DADOS ESTÃO EM "PLANILHA1" E OS DADOS ESTÃO DENTRO DA CÉLULA A1 ATÉ B6.
 
 SAMPLE_RANGE_NAME = "Planilha1!A1:B6" #O CÓDIGO DEVERÁ FICAR DESSA MANEIRA.
 
-Após a estruturação da configuração do cabeçalho, devemos fazer as alterações necessárias dentro do def main ().
+**Após a estruturação da configuração do cabeçalho, devemos fazer as alterações necessárias dentro do def main ().
 
- else: #ESSA PARTE DO CÓDIGO REPRESENTA O JSON QUE DEVE SER EXECUTADO, SENDO NECESSÁRIO FAZER A ALTERAÇÃO DESSA LINHA DE CÓDIGO PARA QUE O PROGRAMA RODE.
+**Fazer a alteração do nome do cliente OAuth.
+**De: 
+else: #ESSA PARTE DO CÓDIGO REPRESENTA O CLIENTE OAUTH QUE DEVE SER EXECUTADO, SENDO NECESSÁRIO FAZER A ALTERAÇÃO DESSA LINHA DE CÓDIGO PARA QUE O PROGRAMA RODE.
       flow = InstalledAppFlow.from_client_secrets_file(
           "credentials.json", SCOPES
 )
 
- else: #O NOME SUBSTITUIDO NA PARTE "credentials.json" DEVE SER IGUAL AO NOME DO JSON QUE VOCÊ INSERIU DENTRO DO VSCODE. NESTE CASO O NOME É: "clientSecret.json.
+**Para:
+ else: #O NOME SUBSTITUIDO NA PARTE "credentials.json" DEVE SER IGUAL AO NOME DO CLIENTE OAUTH QUE VOCÊ INSERIU DENTRO DO VSCODE NA ETAPA DE CONFIGURAÇÃO DE CONTA. NESTE CASO O NOME É: "clientSecret.json.
       flow = InstalledAppFlow.from_client_secrets_file(
           "clientSecret.json", SCOPES
 )
 
+**Nesta etapa do processo, o código de integração entre VSCODE e GOOGLESHEETS está finalizado e já conseguimos fazer com que o programa tenha acesso a planilha configurada.
+**Vale ressaltar que após o primeiro "run" do código, o programa irá rodar e solicitar uma aprovação MANUAL de acesso.
+**Após essa aprovação, uma pasta com o nome "token.json" será criada no VSCODE e não será mais necessário fazer nenhum tipo de aprovação para que o programa tenha acesso à planilha.
+**Notar que essa etapa de aprovação manual e depois integração de aprovação automática está descrita no corpo do código, mas que não será detalhada.
 
-#FALAR SOBRE O PERMITIR O ACESSO MANUALMENTE, QUE SERÁ CRIADO UM ARQUIVO TOKEN.JSON DENTRO DO VSCODE PARA QUE SEJA CONECTADO NA API DO GOOGLE E O ACESSO SEMPRE SEJA FEITO AUTOMATICAMENTE.
+---------------------------------------------------> CONFIGURAÇÃO DE CÓDIGO DA API GOOGLE NO VSCODE PARA PERMISSÃO DE ACESSO À PLANILHA.
