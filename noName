@@ -12,4 +12,21 @@ Após a configuração da API no Google Develope Console, devemos procurar por "
 Dentro do site de quickstart temos que procurar o pip de instalação das bibliotecas do google e executar dentro do nosso software de códigos, no meu caso, estou utilizando VS Code.
 pip de instalação: pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
 O código do pit deve ser inserido dentro da aba "TERMINAL" no VS Code e aguardar finalizar a instalação.
-Para dar andamento a comunicação do programa com o google sheets, é necessário copiar o código que está dentro do quick start. Esse código está dentro da pasta aqui no Github.
+Para dar andamento a comunicação do programa com o google sheets, é necessário copiar o código que está dentro do quick start. Esse código está dentro da pasta "CodeIntegrarGoogleSheets" aqui no Github.
+O código fonte de comunicação do quickstart do Google deve ser modificado de acordo com as nossas necessidades. Verificar pontos abaixo que devem ser levados em consideração:
+
+SCOPES = ["https://www.googleapis.com/auth/spreadsheets.readonly"] #ESSA PARTE DO CÓDIGO PODE SER MODIFICADA. NOTAR QUE O FILMA DA LINHA "readonly" PODE SER RETIRADA PARA QUE O PROGRAMA POSSAR TER MAIS LIBERDADE NA MODIFICAÇÃO DA PLANILHA
+
+SCOPES = ["https://www.googleapis.com/auth/spreadsheets"] #CASO SEJA NECESSÁRIO EXCLUIR, ELE DEVERÁ FICAR DESSA MANEIRA.
+
+SAMPLE_SPREADSHEET_ID = "1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms" #NOTAR QUE ESSA LINHA REPRESENTA A LOCALIZAÇÃO DA SUA PLANILHA NO SISTEMA DO GOOGLE, NO MEU CASO, O LINK DA PLANILHA GOOGLE É:
+https://docs.google.com/spreadsheets/d/1TX2Qv_VxSmil6Bs7FBCDiFhu4ArUbkFzim7qV3brb8w/edit#gid=0 E O ID DESTA PLANILHA É REPRESETADO PELA COMBINAÇÃO ALFANUMÉRICA DEPOS DO /d/ ATÉ A PRÓXIMA /. O CÓDIGO QUE DEVE SER INSERIDO NO CÓDIGO É "1TX2Qv_VxSmil6Bs7FBCDiFhu4ArUbkFzim7qV3brb8w".
+
+SAMPLE_SPREADSHEET_ID = "1TX2Qv_VxSmil6Bs7FBCDiFhu4ArUbkFzim7qV3brb8w" #A LINHA DO CÓDIGO DEVERÁ FICAR DESSA MANEIRA.
+
+SAMPLE_RANGE_NAME = "Class Data!A2:E" #ESSA LINHA DO CÓDIGO REPRESENTA QUAL O NOME DA SHEET QUE O CÓDIGO IRÁ RODAR E AS CÉLULAS QUE OS DADOS ESTÃO INSERIDOS. NO MEU CASO, OS DADOS ESTÃO EM "PLANILHA1" E OS DADOS ESTÃO DENTRO DA CÉLULA A1 ATÉ B6.
+
+SAMPLE_RANGE_NAME = "Planilha1!A1:B6" #O CÓDIGO DEVERÁ FICAR DESSA MANEIRA.
+
+Após a estruturação do passo inicial, devemos fazer as alterações necessárias dentro do main ().
+
