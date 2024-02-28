@@ -1,2 +1,15 @@
 #Estruturação de código para o projeto.
 
+O projeto foi iniciado fazendo a comunicação entre o computador e o google sheets. A princípio é uma comunicação de API do google cloud, inserido dentro do projeto.
+
+O primeiro passo para fazer a comunicação é entrando em Google Developer Console e criando a aba do projeto. É bem parecido com o Github.
+
+https://console.cloud.google.com/cloud-resource-manager
+
+Após a criação da pasta de projeto, deve buscar na barra de pesquisa por "google drive api" e instalar a API.
+O segundo passo é configurar sua API na "Tela de permissão OAuth'.
+Após a configuração da API no Google Develope Console, devemos procurar por "google sheets api python" no google e abrir a página "Python quickstart | Google Sheets"
+Dentro do site de quickstart temos que procurar o pip de instalação das bibliotecas do google e executar dentro do nosso software de códigos, no meu caso, estou utilizando VS Code.
+pip de instalação: pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
+O código do pit deve ser inserido dentro da aba "TERMINAL" no VS Code e aguardar finalizar a instalação.
+Para dar andamento a comunicação do programa com o google sheets, é necessário copiar o código que está dentro do quick start. Esse código está dentro da pasta aqui no Github.
