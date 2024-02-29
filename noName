@@ -65,4 +65,4 @@ else: #ESSA PARTE DO CÓDIGO REPRESENTA O CLIENTE OAUTH QUE DEVE SER EXECUTADO, 
 
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||| CONFIGURAÇÃO DE CÓDIGO DA API GOOGLE NO VSCODE PARA INTEGRAÇÃO COM A PLANILHA:
 
-
+**Nesta parte é feito o desenvolvimento do código e o que deseja que o programa realize.
