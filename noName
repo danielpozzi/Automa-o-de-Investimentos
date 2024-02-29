@@ -1,4 +1,4 @@
-#Estruturação de código para o projeto.
+INTEGRANDO O VSCODE AO GOOGLESHEETS.
 
 O projeto foi iniciado fazendo a comunicação entre o computador e o google sheets. A princípio é uma comunicação de API do google cloud, inserido dentro do projeto.
 
@@ -61,4 +61,8 @@ else: #ESSA PARTE DO CÓDIGO REPRESENTA O CLIENTE OAUTH QUE DEVE SER EXECUTADO, 
 **Após essa aprovação, uma pasta com o nome "token.json" será criada no VSCODE e não será mais necessário fazer nenhum tipo de aprovação para que o programa tenha acesso à planilha.
 **Notar que essa etapa de aprovação manual e depois integração de aprovação automática está descrita no corpo do código, mas que não será detalhada.
 
----------------------------------------------------> CONFIGURAÇÃO DE CÓDIGO DA API GOOGLE NO VSCODE PARA PERMISSÃO DE ACESSO À PLANILHA.
+---------------------------------------------------> FINALIZADA A ETAPA DE CONFIGURAÇÃO DE CÓDIGO DA API GOOGLE NO VSCODE PARA PERMISSÃO DE ACESSO À PLANILHA.
+
+||||||||||||||||||||||||||||||||||||||||||||||||||||||| CONFIGURAÇÃO DE CÓDIGO DA API GOOGLE NO VSCODE PARA INTEGRAÇÃO COM A PLANILHA:
+
+
